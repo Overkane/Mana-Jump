@@ -1,0 +1,79 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Overkane Game Template"
+config/version="v1.0.0"
+config/tags=PackedStringArray("template")
+run/main_scene="uid://cdwcacg0m1wo8"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+run/max_fps=120
+boot_splash/bg_color=Color(0.033853278, 0.033853278, 0.033853274, 1)
+boot_splash/show_image=false
+boot_splash/use_filter=false
+config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://dq0omksjyk83t"
+general/default_playback_type.web=0
+
+[autoload]
+
+EventBus="*res://core/event_bus.gd"
+AudioSystem="*res://core/audio/audio_system.tscn"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+gdscript/warnings/unsafe_cast=1
+gdscript/warnings/unsafe_call_argument=1
+gdscript/warnings/return_value_discarded=1
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/game_tools/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://core/": "red",
+"res://game/": "orange",
+"res://game/ui/": "green",
+"res://lib/": "green",
+"res://shared/": "pink"
+}
+
+[gui]
+
+theme/custom="uid://cjjvdx7nk1i2x"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://shared/translations/en.po", "res://shared/translations/ru.po", "res://shared/translations/de.po", "res://shared/translations/es_ES.po", "res://shared/translations/fr.po", "res://shared/translations/it.po", "res://shared/translations/pl.po", "res://shared/translations/pt_BR.po", "res://shared/translations/ja.po", "res://shared/translations/ko.po", "res://shared/translations/zh_CN.po")
+locale/translations_pot_files=PackedStringArray("res://core/ui/language_selector/language_selector.gd", "res://game/ui/menus/main_menu/main_menu.gd", "res://game/ui/menus/settings_menu/settings_menu.gd")
+locale/test="en"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

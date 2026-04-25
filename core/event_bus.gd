@@ -1,0 +1,8 @@
+extends Node
+
+@warning_ignore_start("unused_signal")
+signal ui_set_control_defaults
+signal ui_settings_menu_requested
+signal ui_settings_menu_closed
+signal ui_credits_menu_requested
+signal ui_credits_menu_closed

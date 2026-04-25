@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c6o2orftweu4h"]
+
+[ext_resource type="Script" uid="uid://cprj1ssdi448e" path="res://game/ui/menus/settings_menu/setting_slider/setting_slider.gd" id="1_s2h4w"]
+
+[node name="SettingsSlider" type="HBoxContainer" unique_id=577484727]
+script = ExtResource("1_s2h4w")
+
+[node name="SliderLabel" type="Label" parent="." unique_id=1637816504]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Label"
+
+[node name="HSlider" type="HSlider" parent="." unique_id=54621378]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bk46q7h61y58d"]
+
+[ext_resource type="Script" uid="uid://dygwhai4hxjxs" path="res://game/ui/components/basic_button/basic_button.gd" id="1_ejenr"]
+
+[node name="BasicButton" type="Button" unique_id=174340906]
+script = ExtResource("1_ejenr")

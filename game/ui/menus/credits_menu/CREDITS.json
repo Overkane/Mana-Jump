@@ -1,0 +1,42 @@
+[
+	{
+		"type": "[Font]",
+		"entries": [
+			{
+				"name": "MyFont",
+				"author": "John Doe",
+				"license": "CC BY 4.0",
+				"source": "https://example.com/pixelfont"
+			},
+			{
+				"name": "MyFont2",
+				"author": "John Doe2",
+				"license": "CC BY 4.0",
+				"source": "https://example.com/pixelfont"
+			}
+		]
+	},
+	{
+		"type": "[Music]",
+		"entries": [
+			{
+				"name": "Background Music",
+				"author": "Composer X",
+				"license": "CC BY-SA 3.0",
+				"source": "https://example.com/bg-music"
+			}
+		]
+	},
+	{
+		"type": "[Art]",
+		"entries": [
+			{
+				"name": "Forest Tileset",
+				"type": "Sprite",
+				"author": "Jane Smith",
+				"license": "MIT",
+				"source": "https://example.com/foresttileset"
+			}
+		]
+	}
+]

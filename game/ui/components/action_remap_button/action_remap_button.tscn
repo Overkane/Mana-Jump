@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://k1llh5degwid"]
+
+[ext_resource type="Script" uid="uid://jroh8t1ppais" path="res://game/ui/components/action_remap_button/action_remap_button.gd" id="1_fyqjt"]
+
+[node name="ActionRemapButton" type="Button" unique_id=381919544]
+custom_minimum_size = Vector2(90, 30)
+offset_right = 8.0
+offset_bottom = 8.0
+toggle_mode = true
+script = ExtResource("1_fyqjt")

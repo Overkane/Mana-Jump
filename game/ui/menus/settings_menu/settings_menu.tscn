@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://bskrbbckw33ae"]
+
+[ext_resource type="Script" uid="uid://bjxplrhab5cq7" path="res://game/ui/menus/settings_menu/settings_menu.gd" id="1_e4ji4"]
+[ext_resource type="PackedScene" uid="uid://c6o2orftweu4h" path="res://game/ui/menus/settings_menu/setting_slider/setting_slider.tscn" id="2_d47hp"]
+[ext_resource type="PackedScene" uid="uid://dd32j47i2raeu" path="res://game/ui/menus/settings_menu/language_selector/language_selector.tscn" id="2_mivhs"]
+[ext_resource type="PackedScene" uid="uid://k1llh5degwid" path="res://game/ui/components/action_remap_button/action_remap_button.tscn" id="3_d47hp"]
+[ext_resource type="PackedScene" uid="uid://cvrqoc05blokq" path="res://game/ui/menus/settings_menu/setting_check_button/setting_check_button.tscn" id="4_b8mc1"]
+[ext_resource type="Script" uid="uid://dygwhai4hxjxs" path="res://game/ui/components/basic_button/basic_button.gd" id="5_d47hp"]
+
+[node name="SettingsMenu" type="Control" unique_id=1341294909]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e4ji4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=657629977]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=233373645]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="GeneralTab" type="Control" parent="VBoxContainer/TabContainer" unique_id=1773882128]
+unique_name_in_owner = true
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/GeneralTab" unique_id=477892307]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/GeneralTab/MarginContainer" unique_id=160284552]
+layout_mode = 2
+
+[node name="AudioSettingsContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/GeneralTab/MarginContainer/VBoxContainer" unique_id=1421608237]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MasterAudioSlider" parent="VBoxContainer/TabContainer/GeneralTab/MarginContainer/VBoxContainer/AudioSettingsContainer" unique_id=1345984586 instance=ExtResource("2_d47hp")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MusicAudioSlider" parent="VBoxContainer/TabContainer/GeneralTab/MarginContainer/VBoxContainer/AudioSettingsContainer" unique_id=1521190564 instance=ExtResource("2_d47hp")]
+unique_name_in_owner = true
+layout_mode = 2
+setting = 1
+
+[node name="SFXAudioSlider" parent="VBoxContainer/TabContainer/GeneralTab/MarginContainer/VBoxContainer/AudioSettingsContainer" unique_id=552921789 instance=ExtResource("2_d47hp")]
+unique_name_in_owner = true
+layout_mode = 2
+setting = 2
+
+[node name="LanguageSelector" parent="VBoxContainer/TabContainer/GeneralTab" unique_id=179473509 instance=ExtResource("2_mivhs")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 18.0
+offset_top = 241.0
+offset_right = 129.0
+offset_bottom = 264.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="VSyncSettingsCheckButton" parent="VBoxContainer/TabContainer/GeneralTab" unique_id=746634870 instance=ExtResource("4_b8mc1")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 113.0
+offset_right = 100.0
+offset_bottom = 144.0
+setting = 20
+
+[node name="WindowModeSettingsCheckButton" parent="VBoxContainer/TabContainer/GeneralTab" unique_id=1724857743 instance=ExtResource("4_b8mc1")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 146.0
+offset_right = 100.0
+offset_bottom = 177.0
+setting = 21
+
+[node name="MouseModeSettingsCheckButton" parent="VBoxContainer/TabContainer/GeneralTab" unique_id=2123166990 instance=ExtResource("4_b8mc1")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 11.0
+offset_top = 179.0
+offset_right = 101.0
+offset_bottom = 210.0
+setting = 101
+
+[node name="ControlsTab" type="Control" parent="VBoxContainer/TabContainer" unique_id=781147769]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/ControlsTab" unique_id=1096879337]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ActionList" type="VBoxContainer" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer" unique_id=555886676]
+layout_mode = 2
+
+[node name="Action1" type="HBoxContainer" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList" unique_id=155885880]
+layout_mode = 2
+
+[node name="ActionMoveUpLabel" type="Label" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList/Action1" unique_id=280977933]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Move up"
+
+[node name="ActionRemapButton" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList/Action1" unique_id=2077748615 instance=ExtResource("3_d47hp")]
+layout_mode = 2
+
+[node name="Action2" type="HBoxContainer" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList" unique_id=725373846]
+layout_mode = 2
+
+[node name="ActionMoveDownLabel" type="Label" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList/Action2" unique_id=703142526]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Move down"
+
+[node name="ActionRemapButton" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList/Action2" unique_id=23530716 instance=ExtResource("3_d47hp")]
+layout_mode = 2
+_action_id = 1
+
+[node name="Action3" type="HBoxContainer" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList" unique_id=2124315551]
+layout_mode = 2
+
+[node name="ActionMoveRight" type="Label" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList/Action3" unique_id=1903286782]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Move right"
+
+[node name="ActionRemapButton" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList/Action3" unique_id=167840049 instance=ExtResource("3_d47hp")]
+layout_mode = 2
+_action_id = 3
+
+[node name="Action4" type="HBoxContainer" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList" unique_id=74718345]
+layout_mode = 2
+
+[node name="ActionMoveLeftLabel" type="Label" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList/Action4" unique_id=1268133405]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Move left"
+
+[node name="ActionRemapButton" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer/ActionList/Action4" unique_id=869894645 instance=ExtResource("3_d47hp")]
+layout_mode = 2
+_action_id = 2
+
+[node name="DefaultControlsButton" type="Button" parent="VBoxContainer/TabContainer/ControlsTab/MarginContainer" unique_id=438245021]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Defaults"
+
+[node name="CloseButton" type="Button" parent="VBoxContainer" unique_id=933536295]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+script = ExtResource("5_d47hp")
+metadata/_custom_type_script = "uid://dygwhai4hxjxs"

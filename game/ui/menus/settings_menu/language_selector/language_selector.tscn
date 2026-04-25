@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dd32j47i2raeu"]
+
+[ext_resource type="Script" uid="uid://c6fdlimb2pfpo" path="res://game/ui/menus/settings_menu/language_selector/language_selector.gd" id="1_jx1jb"]
+
+[node name="LanguageSelector" type="MarginContainer" unique_id=366483667]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jx1jb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1563936220]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=547062815]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Language"
+
+[node name="LanguageList" type="OptionButton" parent="HBoxContainer" unique_id=1376103049]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cdwcacg0m1wo8"]
+
+[ext_resource type="Script" uid="uid://calevonhcsrck" path="res://game/game.gd" id="1_vasa2"]
+[ext_resource type="PackedScene" uid="uid://b01ff5ait7yvs" path="res://game/ui/menus/main_menu/main_menu.tscn" id="2_h7iqs"]
+[ext_resource type="PackedScene" uid="uid://32dmo00jtdoc" path="res://game/ui/menus/pause_menu/pause_menu.tscn" id="4_4fuuu"]
+[ext_resource type="PackedScene" uid="uid://cdxhq6kjyohc5" path="res://game/ui/menus/credits_menu/credits_menu.tscn" id="5_dakft"]
+[ext_resource type="PackedScene" uid="uid://bskrbbckw33ae" path="res://game/ui/menus/settings_menu/settings_menu.tscn" id="6_u5opy"]
+
+[node name="Game" type="Node" unique_id=1387840464]
+script = ExtResource("1_vasa2")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=43071766]
+
+[node name="MainMenu" parent="UI" unique_id=1707697132 instance=ExtResource("2_h7iqs")]
+
+[node name="PauseMenu" parent="UI" unique_id=220518083 instance=ExtResource("4_4fuuu")]
+unique_name_in_owner = true
+visible = false
+
+[node name="CreditsMenu" parent="UI" unique_id=314692057 instance=ExtResource("5_dakft")]
+visible = false
+
+[node name="SettingsMenu" parent="UI" unique_id=1707017507 instance=ExtResource("6_u5opy")]
+visible = false

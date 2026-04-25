@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://32dmo00jtdoc"]
+
+[ext_resource type="Script" uid="uid://bt2ypjvual31l" path="res://game/ui/menus/pause_menu/pause_menu.gd" id="1_rji8m"]
+[ext_resource type="Script" uid="uid://dygwhai4hxjxs" path="res://game/ui/components/basic_button/basic_button.gd" id="2_xfuhp"]
+
+[node name="PauseMenu" type="Control" unique_id=529121865]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rji8m")
+
+[node name="PauseMenuButtonList" type="VBoxContainer" parent="." unique_id=1751059335]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -50.5
+offset_right = 39.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueButton" type="Button" parent="PauseMenuButtonList" unique_id=1951628039]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continue"
+script = ExtResource("2_xfuhp")
+metadata/_custom_type_script = "uid://dygwhai4hxjxs"
+
+[node name="SettingsButton" type="Button" parent="PauseMenuButtonList" unique_id=352733857]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Settings"
+script = ExtResource("2_xfuhp")
+metadata/_custom_type_script = "uid://dygwhai4hxjxs"
+
+[node name="CreditsButton" type="Button" parent="PauseMenuButtonList" unique_id=4978898]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Credits"
+script = ExtResource("2_xfuhp")
+metadata/_custom_type_script = "uid://dygwhai4hxjxs"
+
+[node name="QuitButton" type="Button" parent="PauseMenuButtonList" unique_id=469030105]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+script = ExtResource("2_xfuhp")
+metadata/_custom_type_script = "uid://dygwhai4hxjxs"

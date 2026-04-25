@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cdxhq6kjyohc5"]
+
+[ext_resource type="Script" uid="uid://cuttupv6lthaq" path="res://game/ui/menus/credits_menu/credits_menu.gd" id="1_cnan8"]
+[ext_resource type="JSON" path="res://game/ui/menus/credits_menu/CREDITS.json" id="2_w8i6y"]
+[ext_resource type="Script" uid="uid://dygwhai4hxjxs" path="res://game/ui/components/basic_button/basic_button.gd" id="3_dv6cl"]
+
+[node name="CreditsMenu" type="Control" unique_id=2109115871]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cnan8")
+credits_file = ExtResource("2_w8i6y")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1717493743]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1569450489]
+layout_mode = 2
+
+[node name="CreditsText" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1115788957]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[GameTitle]
+Made by Overkane
+
+[Art]
+[Music]
+[Font]"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=564269391]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+script = ExtResource("3_dv6cl")
+metadata/_custom_type_script = "uid://dygwhai4hxjxs"

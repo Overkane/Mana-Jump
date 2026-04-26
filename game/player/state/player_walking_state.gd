@@ -1,9 +1,6 @@
 class_name PlayerWalkingState
 extends PlayerState
 
-const _HORIZONTAL_SPEED := 300.0
-
-
 func enter() -> void:
 	pass # Standing animation
 
@@ -19,7 +16,7 @@ func physics_update(delta: float) -> void:
 		direction = Vector2.LEFT
 
 	if direction != Vector2.ZERO:
-		_player.move(direction * _HORIZONTAL_SPEED)
+		_player.move(direction * Player.HORIZONTAL_SPEED)
 		if not _player.is_on_floor():
 			state_change_requested.emit(PlayerFallingState.new(_data))
 	else:

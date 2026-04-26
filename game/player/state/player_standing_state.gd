@@ -18,5 +18,7 @@ func physics_update(delta: float) -> void:
 	if direction != Vector2.ZERO:
 		state_change_requested.emit(PlayerWalkingState.new(_data))
 
+	_player.move(Vector2.ZERO)
+
 	if not _player.is_on_floor():
 		state_change_requested.emit(PlayerFallingState.new(_data))

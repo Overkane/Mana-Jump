@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://b4ue521gf0tkn"]
+
+[ext_resource type="Texture2D" uid="uid://dvwrr3e5wesdw" path="res://icon.svg" id="1_54uiu"]
+[ext_resource type="PackedScene" uid="uid://ckjlnqxmt81k3" path="res://game/game_world/platforms/platform.tscn" id="1_ng8ei"]
+[ext_resource type="Script" uid="uid://uvqyjigiarw7" path="res://game/game_world/platform_controller.gd" id="2_e7f4c"]
+
+[sub_resource type="Curve2D" id="Curve2D_bteu8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 60, -100, 0, 0, 0, 0, 580, -100)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qumwg"]
+size = Vector2(26, 421)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a4qn"]
+size = Vector2(639, 20)
+
+[node name="GameWorld" type="Node2D" unique_id=1155839157]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1257717229]
+modulate = Color(0.35867006, 0.49672478, 0.92764723, 0.34117648)
+offset_left = 1.0
+offset_right = 641.0
+offset_bottom = 366.0
+texture = ExtResource("1_54uiu")
+metadata/_edit_lock_ = true
+
+[node name="PlatformController" type="Node" parent="." unique_id=1451168010]
+script = ExtResource("2_e7f4c")
+
+[node name="Platforms" type="CharacterBody2D" parent="PlatformController" unique_id=1329017984]
+unique_name_in_owner = true
+
+[node name="Platform" parent="PlatformController/Platforms" unique_id=21361729 instance=ExtResource("1_ng8ei")]
+position = Vector2(482, 182)
+
+[node name="Platform14" parent="PlatformController/Platforms" unique_id=1000866882 instance=ExtResource("1_ng8ei")]
+position = Vector2(407, 11)
+
+[node name="Platform2" parent="PlatformController/Platforms" unique_id=1135824257 instance=ExtResource("1_ng8ei")]
+position = Vector2(535, 110)
+
+[node name="Platform10" parent="PlatformController/Platforms" unique_id=1803188672 instance=ExtResource("1_ng8ei")]
+position = Vector2(535, 50)
+
+[node name="Platform11" parent="PlatformController/Platforms" unique_id=1496453133 instance=ExtResource("1_ng8ei")]
+position = Vector2(272, 59)
+
+[node name="Platform12" parent="PlatformController/Platforms" unique_id=994980371 instance=ExtResource("1_ng8ei")]
+position = Vector2(76, 35)
+
+[node name="Platform13" parent="PlatformController/Platforms" unique_id=2103079803 instance=ExtResource("1_ng8ei")]
+position = Vector2(177, 70)
+
+[node name="Platform9" parent="PlatformController/Platforms" unique_id=455694758 instance=ExtResource("1_ng8ei")]
+position = Vector2(420, 78)
+
+[node name="Platform3" parent="PlatformController/Platforms" unique_id=1333931006 instance=ExtResource("1_ng8ei")]
+position = Vector2(158, 281)
+
+[node name="Platform4" parent="PlatformController/Platforms" unique_id=747914753 instance=ExtResource("1_ng8ei")]
+position = Vector2(313, 127)
+
+[node name="Platform5" parent="PlatformController/Platforms" unique_id=136592110 instance=ExtResource("1_ng8ei")]
+position = Vector2(449, 264)
+
+[node name="Platform6" parent="PlatformController/Platforms" unique_id=532404339 instance=ExtResource("1_ng8ei")]
+position = Vector2(557, 274)
+
+[node name="Platform7" parent="PlatformController/Platforms" unique_id=1795265543 instance=ExtResource("1_ng8ei")]
+position = Vector2(317, 206)
+
+[node name="Platform8" parent="PlatformController/Platforms" unique_id=831910497 instance=ExtResource("1_ng8ei")]
+position = Vector2(151, 140)
+
+[node name="PlatformSpawnPath" type="Path2D" parent="PlatformController" unique_id=1508376868]
+curve = SubResource("Curve2D_bteu8")
+
+[node name="PlatformSpawnPoint" type="PathFollow2D" parent="PlatformController/PlatformSpawnPath" unique_id=1656600509]
+unique_name_in_owner = true
+position = Vector2(60, -100)
+rotates = false
+
+[node name="PlatformSpawnTimer" type="Timer" parent="PlatformController" unique_id=1337075923]
+unique_name_in_owner = true
+process_callback = 0
+autostart = true
+
+[node name="PlatformSpawnTimer2" type="Timer" parent="PlatformController" unique_id=30418062]
+unique_name_in_owner = true
+process_callback = 0
+autostart = true
+
+[node name="Walls" type="Node2D" parent="." unique_id=871108753]
+
+[node name="Wall" type="StaticBody2D" parent="Walls" unique_id=1847894557]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall" unique_id=1980609876]
+position = Vector2(11.999996, 177)
+scale = Vector2(0.203125, 3.4140625)
+texture = ExtResource("1_54uiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall" unique_id=1505181116]
+position = Vector2(11, 180)
+shape = SubResource("RectangleShape2D_qumwg")
+
+[node name="Wall3" type="StaticBody2D" parent="Walls" unique_id=112798525]
+position = Vector2(132, 201.00002)
+rotation = 1.584759
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall3" unique_id=2139868235]
+position = Vector2(11.999996, 177)
+scale = Vector2(0.203125, 3.4140625)
+texture = ExtResource("1_54uiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3" unique_id=988247820]
+position = Vector2(11, 180)
+shape = SubResource("RectangleShape2D_qumwg")
+
+[node name="Wall2" type="StaticBody2D" parent="Walls" unique_id=1205267534]
+position = Vector2(614, -9)
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall2" unique_id=1142324042]
+position = Vector2(11.999996, 177)
+scale = Vector2(0.203125, 3.4140625)
+texture = ExtResource("1_54uiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2" unique_id=833552581]
+position = Vector2(12, 180)
+shape = SubResource("RectangleShape2D_qumwg")
+
+[node name="DefeatArea" type="Area2D" parent="." unique_id=1030723536]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DefeatArea" unique_id=1667841601]
+position = Vector2(318.5, 359)
+shape = SubResource("RectangleShape2D_8a4qn")
+
+[node name="Icon" type="Sprite2D" parent="DefeatArea" unique_id=521297425]
+modulate = Color(1, 0.015686275, 0.40392157, 0.34901962)
+position = Vector2(318.99997, 361.5)
+scale = Vector2(5.0000005, 0.2109375)
+texture = ExtResource("1_54uiu")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckjlnqxmt81k3"]
+
+[ext_resource type="Script" uid="uid://njqqgimsmdhe" path="res://game/game_world/platforms/platform.gd" id="1_ho0gs"]
+[ext_resource type="Texture2D" uid="uid://dvwrr3e5wesdw" path="res://icon.svg" id="1_s7nx6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5y8u"]
+size = Vector2(60, 8)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=21361729]
+collision_mask = 3
+script = ExtResource("1_ho0gs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1088871345]
+scale = Vector2(0.46875, 0.062499985)
+texture = ExtResource("1_s7nx6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094789408]
+shape = SubResource("RectangleShape2D_b5y8u")
+one_way_collision = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=523918428]
+unique_name_in_owner = true

@@ -2,7 +2,7 @@ class_name GameInputs
 extends Node
 
 enum ActionID {
-	MOVE_UP = 0,
+	JUMP = 0,
 	MOVE_DOWN = 1,
 	MOVE_LEFT = 2,
 	MOVE_RIGHT = 3,
@@ -18,7 +18,7 @@ static func init() -> void:
 static func _init_default_input_actions() -> void:
 	var input_event_key := InputSystem.InputEventKeyWrapper.new()
 	input_event_key.physical_keycode = KEY_W
-	InputSystem.add_action(ActionID.MOVE_UP, "move_up", input_event_key)
+	InputSystem.add_action(ActionID.JUMP, "move_up", input_event_key)
 
 	# CHECK will be previous pointer not discarded for sure? Or not until function is finished?
 	input_event_key = InputSystem.InputEventKeyWrapper.new()

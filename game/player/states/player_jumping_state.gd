@@ -1,0 +1,36 @@
+class_name PlayerJumpingState
+extends State
+
+const _HORIZONTAL_SPEED := 300.0
+const _GRAVITY := 980.0
+const _JUMP_VELOCITY := 600.0
+
+var _player: Player
+var _velocity: Vector2
+
+func _init(data: Dictionary) -> void:
+	super(data)
+	assert(data.has("player"))
+	_player = data.player
+
+
+func enter() -> void:
+	_velocity.y = -_JUMP_VELOCITY
+	pass # Jumping animation
+
+func physics_update(delta: float) -> void:
+	_velocity.y += _GRAVITY * delta
+
+	var horizontal_direction: Vector2 = Vector2.ZERO
+	if Input.is_action_pressed(InputSystem.get_action_name(GameInputs.ActionID.MOVE_RIGHT)):
+		horizontal_direction = Vector2.RIGHT
+	elif Input.is_action_pressed(InputSystem.get_action_name(GameInputs.ActionID.MOVE_LEFT)):
+		horizontal_direction = Vector2.LEFT
+
+	if horizontal_direction != Vector2.ZERO:
+		_velocity.x = horizontal_direction.x * _HORIZONTAL_SPEED
+
+	_player.move(_velocity)
+
+	if _player.is_on_floor():
+		state_change_requested.emit(PlayerStandingState.new(_data))

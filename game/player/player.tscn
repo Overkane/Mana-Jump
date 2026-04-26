@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ctg3xgtk5g4gg"]
+
+[ext_resource type="Script" uid="uid://doi8jm5lwphbx" path="res://game/player/player.gd" id="1_8soms"]
+[ext_resource type="Texture2D" uid="uid://dvwrr3e5wesdw" path="res://icon.svg" id="1_b2mth"]
+[ext_resource type="Script" uid="uid://blqwj7i4krauh" path="res://lib/state_machine/state_machine.gd" id="1_obar5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8soms"]
+size = Vector2(124, 126)
+
+[node name="Player" type="CharacterBody2D" unique_id=53696915]
+script = ExtResource("1_8soms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=299083758]
+shape = SubResource("RectangleShape2D_8soms")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=621964164]
+texture = ExtResource("1_b2mth")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1258732084]
+
+[node name="StateMachine" type="Node" parent="." unique_id=2107930046]
+unique_name_in_owner = true
+script = ExtResource("1_obar5")
+metadata/_custom_type_script = "uid://blqwj7i4krauh"

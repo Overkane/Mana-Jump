@@ -1,17 +1,11 @@
 class_name PlayerJumpingState
-extends State
+extends PlayerState
 
 const _HORIZONTAL_SPEED := 300.0
 const _GRAVITY := 980.0
 const _JUMP_VELOCITY := 600.0
 
-var _player: Player
 var _velocity: Vector2
-
-func _init(data: Dictionary) -> void:
-	super(data)
-	assert(data.has("player"))
-	_player = data.player
 
 
 func enter() -> void:

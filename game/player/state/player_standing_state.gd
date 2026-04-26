@@ -1,16 +1,5 @@
-class_name PlayerWalkingState
-extends State
-
-const _HORIZONTAL_SPEED := 300.0
-
-var _player: Player
-
-
-func _init(data: Dictionary) -> void:
-	super(data)
-	assert(data.has("player"))
-	_player = data.player
-
+class_name PlayerStandingState
+extends PlayerState
 
 func enter() -> void:
 	pass # Standing animation
@@ -27,8 +16,7 @@ func physics_update(delta: float) -> void:
 		direction = Vector2.LEFT
 
 	if direction != Vector2.ZERO:
-		_player.move(direction * _HORIZONTAL_SPEED)
-		if not _player.is_on_floor():
-			state_change_requested.emit(PlayerFallingState.new(_data))
-	else:
-		state_change_requested.emit(PlayerStandingState.new(_data))
+		state_change_requested.emit(PlayerWalkingState.new(_data))
+
+	if not _player.is_on_floor():
+		state_change_requested.emit(PlayerFallingState.new(_data))

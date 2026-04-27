@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b4ue521gf0tkn"]
 
+[ext_resource type="Script" uid="uid://ce55p8kxvaaug" path="res://game/game_world/game_world.gd" id="1_3qnfg"]
 [ext_resource type="Texture2D" uid="uid://dvwrr3e5wesdw" path="res://icon.svg" id="1_54uiu"]
 [ext_resource type="PackedScene" uid="uid://ckjlnqxmt81k3" path="res://game/game_world/platforms/platform.tscn" id="1_ng8ei"]
 [ext_resource type="Script" uid="uid://uvqyjigiarw7" path="res://game/game_world/platform_controller.gd" id="2_e7f4c"]
+[ext_resource type="PackedScene" uid="uid://ctg3xgtk5g4gg" path="res://game/player/player.tscn" id="3_e7f4c"]
 
 [sub_resource type="Curve2D" id="Curve2D_bteu8"]
 _data = {
@@ -17,6 +19,7 @@ size = Vector2(26, 421)
 size = Vector2(639, 20)
 
 [node name="GameWorld" type="Node2D" unique_id=1155839157]
+script = ExtResource("1_3qnfg")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1257717229]
 modulate = Color(0.35867006, 0.49672478, 0.92764723, 0.34117648)
@@ -147,3 +150,11 @@ modulate = Color(1, 0.015686275, 0.40392157, 0.34901962)
 position = Vector2(318.99997, 361.5)
 scale = Vector2(5.0000005, 0.2109375)
 texture = ExtResource("1_54uiu")
+
+[node name="Player" parent="." unique_id=53696915 instance=ExtResource("3_e7f4c")]
+unique_name_in_owner = true
+position = Vector2(314, 173)
+
+[node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=1069091862]
+unique_name_in_owner = true
+position = Vector2(314, 186)

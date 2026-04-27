@@ -7,6 +7,7 @@ enum ActionID {
 	MOVE_LEFT = 2,
 	MOVE_RIGHT = 3,
 	PAUSE = 100,
+	DEBUG_RESET = 101,
 }
 
 
@@ -36,3 +37,7 @@ static func _init_default_input_actions() -> void:
 	input_event_key = InputSystem.InputEventKeyWrapper.new()
 	input_event_key.physical_keycode = KEY_ESCAPE if OS.has_feature("pc") else KEY_P
 	InputSystem.add_action(ActionID.PAUSE, "pause", input_event_key)
+
+	input_event_key = InputSystem.InputEventKeyWrapper.new()
+	input_event_key.physical_keycode = KEY_R
+	InputSystem.add_action(ActionID.DEBUG_RESET, "reset", input_event_key)

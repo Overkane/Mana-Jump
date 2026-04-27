@@ -5,6 +5,10 @@ const HORIZONTAL_SPEED = 125
 const JUMP_VELOCITY = 400
 const GRAVITY = 900
 
+const _COYOTE_FRAMES = 5
+
+static var coyote_time: float = float(_COYOTE_FRAMES) / Engine.physics_ticks_per_second
+
 @onready var state_machine: StateMachine = %StateMachine
 
 

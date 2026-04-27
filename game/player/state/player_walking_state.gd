@@ -1,6 +1,10 @@
 class_name PlayerWalkingState
 extends PlayerState
 
+var _current_coyote_time := 0.0
+var _was_coyote_time_active := false
+
+
 func enter() -> void:
 	pass # Standing animation
 
@@ -18,6 +22,15 @@ func physics_update(delta: float) -> void:
 	if direction != Vector2.ZERO:
 		_player.move(direction * Player.HORIZONTAL_SPEED)
 		if not _player.is_on_floor():
-			state_change_requested.emit(PlayerFallingState.new(_data))
+			if _current_coyote_time > 0:
+				_current_coyote_time -= delta
+			# TODO perhaps should do that in another state
+			if not _was_coyote_time_active:
+				_was_coyote_time_active = true
+				_current_coyote_time = Player.coyote_time
+			elif _current_coyote_time < 0 or is_zero_approx(_current_coyote_time):
+				state_change_requested.emit(PlayerFallingState.new(_data))
+		else:
+			_was_coyote_time_active = false
 	else:
 		state_change_requested.emit(PlayerStandingState.new(_data))

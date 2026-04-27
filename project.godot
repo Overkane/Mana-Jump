@@ -30,6 +30,7 @@ general/default_playback_type.web=0
 
 EventBus="*res://core/event_bus.gd"
 AudioSystem="*res://core/audio/audio_system.tscn"
+InputBuffering="*uid://cwuws0ngdqj5v"
 
 [debug]
 

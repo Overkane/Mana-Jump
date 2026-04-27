@@ -2,7 +2,8 @@ class_name PlayerStandingState
 extends PlayerState
 
 func enter() -> void:
-	pass # Standing animation
+	if InputBuffering.is_input_in_buffer(InputSystem.get_action_name(GameInputs.ActionID.JUMP)):
+		state_change_requested.emit(PlayerJumpingState.new(_data))
 
 func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed(InputSystem.get_action_name(GameInputs.ActionID.JUMP)):

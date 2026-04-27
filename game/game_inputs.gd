@@ -20,6 +20,7 @@ static func _init_default_input_actions() -> void:
 	var input_event_key := InputSystem.InputEventKeyWrapper.new()
 	input_event_key.physical_keycode = KEY_W
 	InputSystem.add_action(ActionID.JUMP, "move_up", input_event_key)
+	InputBuffering.register_event_for_buffering("move_up")
 
 	# CHECK will be previous pointer not discarded for sure? Or not until function is finished?
 	input_event_key = InputSystem.InputEventKeyWrapper.new()

@@ -26,9 +26,11 @@ func start(state: State) -> void:
 func _change_state(new_state: State) -> void:
 	if _current_state != null:
 		_current_state.exit()
-	new_state.enter()
+	# NOTE. Change state and connect change state signal strictly before `enter()` function,
+	# because in `enter()` function we can change the state, so everything should be ready before that.
 	_current_state = new_state
-	_current_state.state_change_requested.connect(_change_state)
+	new_state.state_change_requested.connect(_change_state)
+	new_state.enter()
 
 func _set_state_machine_status(active: bool):
 	set_process(active)

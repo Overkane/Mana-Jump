@@ -79,6 +79,7 @@ locale/test="en"
 2d_physics/layer_1="world"
 2d_physics/layer_2="player_collision"
 2d_physics/layer_3="player_hurtbox"
+2d_physics/layer_11="enemy_hurtbox"
 
 [rendering]
 

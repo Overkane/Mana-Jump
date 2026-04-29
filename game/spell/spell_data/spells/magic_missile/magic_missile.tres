@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpellData" format=3 uid="uid://cq1sssvsgd7hp"]
+
+[ext_resource type="Script" uid="uid://s2221djsiqxp" path="res://game/spell/spell_data/spell_data.gd" id="1_26kly"]
+[ext_resource type="PackedScene" uid="uid://67fv7ceujhh4" path="res://game/spell/spell_data/spells/magic_missile/magic_missile.tscn" id="2_2lkna"]
+
+[resource]
+script = ExtResource("1_26kly")
+name = "Magic Missile"
+damage = 1.0
+spell = ExtResource("2_2lkna")
+direction = 1
+speed = 50.0
+mana_cost = 5.0
+projectile_quantity = 1
+homing = true
+metadata/_custom_type_script = "uid://s2221djsiqxp"

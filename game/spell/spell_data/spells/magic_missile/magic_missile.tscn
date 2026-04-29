@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://67fv7ceujhh4"]
+
+[ext_resource type="PackedScene" uid="uid://c1flcsvrxwav7" path="res://lib/components/2d/hitbox/component_hitbox_2d.tscn" id="1_2tiis"]
+[ext_resource type="Script" uid="uid://di2o063ra3qt6" path="res://game/spell/spell_data/spells/magic_missile/magic_missile.gd" id="1_5q6ki"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5q6ki"]
+
+[node name="MagicMissile" type="Node2D" unique_id=693507035]
+script = ExtResource("1_5q6ki")
+
+[node name="Hitbox2D" parent="." unique_id=1358559902 instance=ExtResource("1_2tiis")]
+collision_mask = 1024
+
+[node name="CollisionShape2D" parent="Hitbox2D" index="0" unique_id=1055038057]
+shape = SubResource("CircleShape2D_5q6ki")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=122185599]
+
+[editable path="Hitbox2D"]

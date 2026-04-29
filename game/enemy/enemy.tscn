@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bp3fpvtklf4yr"]
+
+[ext_resource type="PackedScene" uid="uid://b4154adjjbvvc" path="res://lib/components/2d/hurtbox/component_hurtbox_2d.tscn" id="1_3dvn5"]
+[ext_resource type="Texture2D" uid="uid://dvwrr3e5wesdw" path="res://icon.svg" id="2_q106d"]
+
+[node name="Enemy" type="Node2D" unique_id=1448954370]
+
+[node name="Components" type="Node2D" parent="." unique_id=1264163648]
+
+[node name="Hurtbox2D" parent="Components" unique_id=146611675 instance=ExtResource("1_3dvn5")]
+collision_layer = 1024
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1915254862]
+self_modulate = Color(1, 0.40392157, 0.40392157, 1)
+scale = Vector2(0.15625, 0.390625)
+texture = ExtResource("2_q106d")

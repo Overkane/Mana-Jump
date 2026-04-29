@@ -39,4 +39,7 @@ unique_name_in_owner = true
 script = ExtResource("1_obar5")
 metadata/_custom_type_script = "uid://blqwj7i4krauh"
 
+[node name="SpellCastPoint2D" type="Marker2D" parent="." unique_id=2040592251]
+unique_name_in_owner = true
+
 [editable path="Components/Hurtbox2D"]

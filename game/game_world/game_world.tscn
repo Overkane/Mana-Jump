@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://ckjlnqxmt81k3" path="res://game/game_world/platforms/platform.tscn" id="1_ng8ei"]
 [ext_resource type="Script" uid="uid://uvqyjigiarw7" path="res://game/game_world/platform_controller.gd" id="2_e7f4c"]
 [ext_resource type="PackedScene" uid="uid://ctg3xgtk5g4gg" path="res://game/player/player.tscn" id="3_e7f4c"]
+[ext_resource type="PackedScene" uid="uid://c1flcsvrxwav7" path="res://lib/components/2d/hitbox/component_hitbox_2d.tscn" id="7_8ti5s"]
+[ext_resource type="PackedScene" uid="uid://bp3fpvtklf4yr" path="res://game/enemy/enemy.tscn" id="8_256xm"]
 
 [sub_resource type="Curve2D" id="Curve2D_bteu8"]
 _data = {
@@ -153,8 +155,15 @@ texture = ExtResource("1_54uiu")
 
 [node name="Player" parent="." unique_id=53696915 instance=ExtResource("3_e7f4c")]
 unique_name_in_owner = true
-position = Vector2(314, 173)
+position = Vector2(314, 186)
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=1069091862]
 unique_name_in_owner = true
 position = Vector2(314, 186)
+
+[node name="EnemyHitbox2D" parent="." unique_id=1358559902 instance=ExtResource("7_8ti5s")]
+position = Vector2(37, 182)
+collision_mask = 4
+
+[node name="Enemy" parent="." unique_id=1448954370 instance=ExtResource("8_256xm")]
+position = Vector2(175, 40)

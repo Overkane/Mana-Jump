@@ -23,4 +23,6 @@ func physics_update(delta: float) -> void:
 	_player.move(_velocity)
 
 	if _player.is_on_floor():
+		EventBus.platform_jump_stop.emit()
+		_player.get_mana()
 		state_change_requested.emit(PlayerStandingState.new(_data))

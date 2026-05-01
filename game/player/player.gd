@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+signal died
+
 const HORIZONTAL_SPEED = 125
 const JUMP_VELOCITY = 400
 const GRAVITY = 900
@@ -19,6 +21,7 @@ var _spells: Dictionary[SpellData, float]
 
 
 func _ready() -> void:
+	_health.health_depleted.connect(_on_health_depleted)
 	_hurtbox_2d.got_hit.connect(_on_hit)
 
 	var data := {"player": self }
@@ -40,6 +43,9 @@ func get_mana() -> void:
 			_spells[spell_data] -= spell_data.mana_cost
 			Spell.cast(self, _spell_cast_point_2d.global_position, spell_data)
 
+
+func _on_health_depleted() -> void:
+	died.emit()
 
 func _on_hit(hitbox: ComponentHitbox2D) -> void:
 	_health.take_damage(hitbox.damage)

@@ -1,9 +1,21 @@
 extends Node2D
 
-@onready var player: Player = %Player
-@onready var player_spawn_point: Marker2D = %PlayerSpawnPoint
+@onready var _player: Player = %Player
+@onready var _player_spawn_point: Marker2D = %PlayerSpawnPoint
+@onready var _defeat_area: Area2D = %DefeatArea
 
+
+func _ready() -> void:
+	_player.died.connect(_game_over)
+	_defeat_area.body_entered.connect(_on_defeat_area_body_entered)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(InputSystem.get_action_name(GameInputs.ActionID.DEBUG_RESET)):
-		player.global_position = player_spawn_point.global_position
+		_player.global_position = _player_spawn_point.global_position
+
+
+func _game_over() -> void:
+	print("You lost.")
+
+func _on_defeat_area_body_entered(player: Player) -> void:
+	_game_over()

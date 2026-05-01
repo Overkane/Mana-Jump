@@ -139,6 +139,7 @@ position = Vector2(12, 180)
 shape = SubResource("RectangleShape2D_qumwg")
 
 [node name="DefeatArea" type="Area2D" parent="." unique_id=1030723536]
+unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 monitorable = false

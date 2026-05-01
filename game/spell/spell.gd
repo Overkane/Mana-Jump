@@ -1,12 +1,23 @@
 class_name Spell
-extends Node
+extends Node2D
 
-static func cast(spell_data: SpellData, position: Vector2) -> void:
-	var spell := spell_data.spell.instantiate() as Spell
-	spell.setup(spell_data)
-	spell.global_position = position
-	spell.get_tree().root.add_child(spell)
+var _damage: float
+var _direction: SpellData.Direction
+var _speed: float
+@export var projectile_quantity: int
+var _homing := false
 
 
-func _setup(spell_data: SpellData):
-	pass
+static func cast(caster: Node2D, cast_position: Vector2, spell_data: SpellData) -> void:
+	for i in spell_data.projectile_quantity:
+		var spell := spell_data.spell.instantiate() as Spell
+		spell.setup(spell_data)
+		spell.global_position = cast_position
+		caster.get_tree().root.add_child(spell)
+
+
+func setup(spell_data: SpellData) -> void:
+	_damage = spell_data.damage
+	_direction = spell_data.direction
+	_speed = spell_data.speed
+	_homing = spell_data.homing

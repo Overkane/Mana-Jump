@@ -9,6 +9,7 @@
 script = ExtResource("1_5q6ki")
 
 [node name="Hitbox2D" parent="." unique_id=1358559902 instance=ExtResource("1_2tiis")]
+unique_name_in_owner = true
 collision_mask = 1024
 
 [node name="CollisionShape2D" parent="Hitbox2D" index="0" unique_id=1055038057]

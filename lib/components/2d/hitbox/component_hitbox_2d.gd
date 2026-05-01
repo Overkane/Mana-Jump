@@ -3,7 +3,7 @@ extends Area2D
 
 signal hit
 
-@export var damage := 5
+@export var damage := 5.0
 
 
 func _ready() -> void:

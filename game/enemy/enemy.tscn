@@ -1,14 +1,22 @@
 [gd_scene format=3 uid="uid://bp3fpvtklf4yr"]
 
 [ext_resource type="PackedScene" uid="uid://b4154adjjbvvc" path="res://lib/components/2d/hurtbox/component_hurtbox_2d.tscn" id="1_3dvn5"]
+[ext_resource type="Script" uid="uid://nkw3d7d6ftd" path="res://game/enemy/enemy.gd" id="1_8s3bx"]
 [ext_resource type="Texture2D" uid="uid://dvwrr3e5wesdw" path="res://icon.svg" id="2_q106d"]
+[ext_resource type="PackedScene" uid="uid://cc0xm7ql0sgut" path="res://lib/components/general/health/component_health.tscn" id="3_lw4yu"]
 
 [node name="Enemy" type="Node2D" unique_id=1448954370]
+script = ExtResource("1_8s3bx")
 
 [node name="Components" type="Node2D" parent="." unique_id=1264163648]
 
 [node name="Hurtbox2D" parent="Components" unique_id=146611675 instance=ExtResource("1_3dvn5")]
+unique_name_in_owner = true
 collision_layer = 1024
+
+[node name="Health" parent="Components" unique_id=562956058 instance=ExtResource("3_lw4yu")]
+unique_name_in_owner = true
+max_health = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1915254862]
 self_modulate = Color(1, 0.40392157, 0.40392157, 1)

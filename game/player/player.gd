@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 400
 const GRAVITY = 900
 
 const _COYOTE_FRAMES = 5
-const _MANA_GAIN_PER_JUMP = 1
+const _MANA_GAIN_PER_JUMP = 1.0
 
 static var coyote_time: float = float(_COYOTE_FRAMES) / Engine.physics_ticks_per_second
 
@@ -35,10 +35,10 @@ func move(_velocity: Vector2) -> void:
 func get_mana() -> void:
 	for spell_data: SpellData in _spells:
 		_spells[spell_data] += _MANA_GAIN_PER_JUMP
-		if _spells[spell_data] > spell_data.mana_cost:
+		if _spells[spell_data] > spell_data.mana_cost or is_equal_approx(_spells[spell_data], spell_data.mana_cost):
 			# TODO. Can have mana for several casts.
 			_spells[spell_data] -= spell_data.mana_cost
-			Spell.cast(spell_data, _spell_cast_point_2d.global_position)
+			Spell.cast(self, _spell_cast_point_2d.global_position, spell_data)
 
 
 func _on_hit(hitbox: ComponentHitbox2D) -> void:

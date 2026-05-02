@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dvwrr3e5wesdw" path="res://icon.svg" id="1_54uiu"]
 [ext_resource type="PackedScene" uid="uid://ckjlnqxmt81k3" path="res://game/game_world/platforms/platform.tscn" id="1_ng8ei"]
 [ext_resource type="Script" uid="uid://uvqyjigiarw7" path="res://game/game_world/platform_controller.gd" id="2_e7f4c"]
+[ext_resource type="Script" uid="uid://ckoe44vksbamx" path="res://game/game_world/platforms.gd" id="3_e5oes"]
 [ext_resource type="PackedScene" uid="uid://ctg3xgtk5g4gg" path="res://game/player/player.tscn" id="3_e7f4c"]
-[ext_resource type="PackedScene" uid="uid://c1flcsvrxwav7" path="res://lib/components/2d/hitbox/component_hitbox_2d.tscn" id="7_8ti5s"]
 
 [sub_resource type="Curve2D" id="Curve2D_bteu8"]
 _data = {
@@ -35,6 +35,7 @@ script = ExtResource("2_e7f4c")
 
 [node name="Platforms" type="CharacterBody2D" parent="PlatformController" unique_id=1329017984]
 unique_name_in_owner = true
+script = ExtResource("3_e5oes")
 
 [node name="Platform" parent="PlatformController/Platforms" unique_id=21361729 instance=ExtResource("1_ng8ei")]
 position = Vector2(482, 182)
@@ -78,6 +79,48 @@ position = Vector2(317, 206)
 [node name="Platform8" parent="PlatformController/Platforms" unique_id=831910497 instance=ExtResource("1_ng8ei")]
 position = Vector2(151, 140)
 
+[node name="Platform15" parent="PlatformController/Platforms" unique_id=1275176339 instance=ExtResource("1_ng8ei")]
+position = Vector2(447, -61)
+
+[node name="Platform16" parent="PlatformController/Platforms" unique_id=1710786198 instance=ExtResource("1_ng8ei")]
+position = Vector2(372, -232)
+
+[node name="Platform17" parent="PlatformController/Platforms" unique_id=1852438601 instance=ExtResource("1_ng8ei")]
+position = Vector2(500, -133)
+
+[node name="Platform18" parent="PlatformController/Platforms" unique_id=123108949 instance=ExtResource("1_ng8ei")]
+position = Vector2(500, -193)
+
+[node name="Platform19" parent="PlatformController/Platforms" unique_id=1405720955 instance=ExtResource("1_ng8ei")]
+position = Vector2(237, -184)
+
+[node name="Platform20" parent="PlatformController/Platforms" unique_id=1462516865 instance=ExtResource("1_ng8ei")]
+position = Vector2(41, -208)
+
+[node name="Platform21" parent="PlatformController/Platforms" unique_id=1354841112 instance=ExtResource("1_ng8ei")]
+position = Vector2(142, -173)
+
+[node name="Platform22" parent="PlatformController/Platforms" unique_id=1025422107 instance=ExtResource("1_ng8ei")]
+position = Vector2(385, -165)
+
+[node name="Platform23" parent="PlatformController/Platforms" unique_id=1085045961 instance=ExtResource("1_ng8ei")]
+position = Vector2(123, 38)
+
+[node name="Platform24" parent="PlatformController/Platforms" unique_id=102990496 instance=ExtResource("1_ng8ei")]
+position = Vector2(278, -116)
+
+[node name="Platform25" parent="PlatformController/Platforms" unique_id=974535821 instance=ExtResource("1_ng8ei")]
+position = Vector2(414, 21)
+
+[node name="Platform26" parent="PlatformController/Platforms" unique_id=1256665065 instance=ExtResource("1_ng8ei")]
+position = Vector2(522, 31)
+
+[node name="Platform27" parent="PlatformController/Platforms" unique_id=305436828 instance=ExtResource("1_ng8ei")]
+position = Vector2(282, -37)
+
+[node name="Platform28" parent="PlatformController/Platforms" unique_id=1002867489 instance=ExtResource("1_ng8ei")]
+position = Vector2(116, -103)
+
 [node name="PlatformSpawnPath" type="Path2D" parent="PlatformController" unique_id=1508376868]
 curve = SubResource("Curve2D_bteu8")
 
@@ -91,7 +134,7 @@ unique_name_in_owner = true
 process_callback = 0
 autostart = true
 
-[node name="PlatformSpawnTimer2" type="Timer" parent="PlatformController" unique_id=30418062]
+[node name="PlatformSpawnTimer2" type="Timer" parent="PlatformController" unique_id=1724116157]
 unique_name_in_owner = true
 process_callback = 0
 autostart = true
@@ -107,20 +150,6 @@ scale = Vector2(0.203125, 3.4140625)
 texture = ExtResource("1_54uiu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall" unique_id=1505181116]
-position = Vector2(11, 180)
-shape = SubResource("RectangleShape2D_qumwg")
-
-[node name="Wall3" type="StaticBody2D" parent="Walls" unique_id=112798525]
-position = Vector2(132, 201.00002)
-rotation = 1.584759
-collision_mask = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall3" unique_id=2139868235]
-position = Vector2(11.999996, 177)
-scale = Vector2(0.203125, 3.4140625)
-texture = ExtResource("1_54uiu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3" unique_id=988247820]
 position = Vector2(11, 180)
 shape = SubResource("RectangleShape2D_qumwg")
 
@@ -161,10 +190,10 @@ position = Vector2(314, 186)
 unique_name_in_owner = true
 position = Vector2(314, 186)
 
-[node name="EnemyHitbox2D" parent="." unique_id=1358559902 instance=ExtResource("7_8ti5s")]
-position = Vector2(37, 182)
-collision_mask = 4
-
 [node name="EnemySpawnPosition" type="Marker2D" parent="." unique_id=1672447258]
 unique_name_in_owner = true
 position = Vector2(152, 118)
+
+[node name="WorldMovingPoint" type="Marker2D" parent="." unique_id=1041953309]
+unique_name_in_owner = true
+position = Vector2(314, 154)

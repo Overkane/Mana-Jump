@@ -18,11 +18,14 @@ var _spells: Dictionary[SpellData, float]
 @onready var _health: ComponentHealth = %Health
 @onready var _hurtbox_2d: ComponentHurtbox2D = %Hurtbox2D
 @onready var _spell_cast_point_2d: Marker2D = %SpellCastPoint2D
+@onready var _experience: ComponentExperience = %Experience
 
 
 func _ready() -> void:
 	_health.health_depleted.connect(_on_health_depleted)
-	_hurtbox_2d.got_hit.connect(_on_hit)
+	_hurtbox_2d.got_hit.connect(_on_got_hit)
+
+	add_to_group(Groups.PLAYERS)
 
 	var data := {"player": self }
 	_state_machine.start(PlayerStandingState.new(data))
@@ -47,5 +50,9 @@ func get_mana() -> void:
 func _on_health_depleted() -> void:
 	died.emit()
 
-func _on_hit(hitbox: ComponentHitbox2D) -> void:
-	_health.take_damage(hitbox.damage)
+func _on_got_hit(hitbox: ComponentHitbox2D) -> void:
+	if hitbox.owner is XpOrb:
+		var xp_orb := hitbox.owner as XpOrb
+		_experience.add_xp(xp_orb.get_xp())
+	else:
+		_health.take_damage(hitbox.damage)

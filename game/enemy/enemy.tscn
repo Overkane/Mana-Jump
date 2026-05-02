@@ -16,7 +16,6 @@ collision_layer = 1024
 
 [node name="Health" parent="Components" unique_id=562956058 instance=ExtResource("3_lw4yu")]
 unique_name_in_owner = true
-max_health = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1915254862]
 self_modulate = Color(1, 0.40392157, 0.40392157, 1)

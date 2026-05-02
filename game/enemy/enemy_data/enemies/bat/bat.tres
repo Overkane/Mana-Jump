@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://8082a8nwwbgb"]
+
+[ext_resource type="Script" uid="uid://dumgudrsd241g" path="res://game/enemy/enemy_data/enemy_data.gd" id="1_hkkwt"]
+[ext_resource type="PackedScene" uid="uid://crt4pae3juqov" path="res://game/enemy/enemy_data/enemies/bat/bat.tscn" id="1_qr3fy"]
+
+[resource]
+script = ExtResource("1_hkkwt")
+name = "Bat"
+id = 1
+enemy = ExtResource("1_qr3fy")
+health = 15.0
+damage = 3.0
+speed = 300.0
+xp = 27
+metadata/_custom_type_script = "uid://dumgudrsd241g"

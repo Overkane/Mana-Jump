@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://crt4pae3juqov"]
+
+[ext_resource type="PackedScene" uid="uid://bp3fpvtklf4yr" path="res://game/enemy/enemy.tscn" id="1_ch3f3"]
+[ext_resource type="Script" uid="uid://d2vb7slwyypps" path="res://game/enemy/enemy_data/enemies/bat/bat.gd" id="2_tyv7j"]
+
+[node name="Bat" unique_id=1448954370 instance=ExtResource("1_ch3f3")]
+script = ExtResource("2_tyv7j")

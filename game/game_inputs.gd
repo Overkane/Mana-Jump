@@ -8,6 +8,7 @@ enum ActionID {
 	MOVE_RIGHT = 3,
 	PAUSE = 100,
 	DEBUG_RESET = 101,
+	DEBUG_ENEMY_SPAWN = 102,
 }
 
 
@@ -41,4 +42,8 @@ static func _init_default_input_actions() -> void:
 
 	input_event_key = InputSystem.InputEventKeyWrapper.new()
 	input_event_key.physical_keycode = KEY_R
-	InputSystem.add_action(ActionID.DEBUG_RESET, "reset", input_event_key)
+	InputSystem.add_action(ActionID.DEBUG_RESET, "debug_reset", input_event_key)
+
+	input_event_key = InputSystem.InputEventKeyWrapper.new()
+	input_event_key.physical_keycode = KEY_T
+	InputSystem.add_action(ActionID.DEBUG_ENEMY_SPAWN, "debug_enemy_spawn", input_event_key)

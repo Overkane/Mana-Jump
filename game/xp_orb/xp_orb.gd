@@ -15,6 +15,7 @@ var _orb_sprite: Texture2D
 
 @onready var _sprite_2d: Sprite2D = %Sprite2D
 @onready var _hitbox_2d: ComponentHitbox2D = %Hitbox2D
+@onready var _visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = %VisibleOnScreenNotifier2D
 
 
 static func _static_init() -> void:
@@ -47,6 +48,7 @@ static func spawn_xp_orbs(spawner: Node2D, xp: int) -> void:
 
 func _ready() -> void:
 	_hitbox_2d.hit.connect(_on_hit)
+	_visible_on_screen_notifier_2d.screen_exited.connect(_on_screen_exited)
 
 	_sprite_2d.texture = _orb_sprite
 
@@ -69,4 +71,7 @@ func get_xp() -> int:
 
 
 func _on_hit(hurtbox: ComponentHurtbox2D) -> void:
+	queue_free()
+
+func _on_screen_exited() -> void:
 	queue_free()

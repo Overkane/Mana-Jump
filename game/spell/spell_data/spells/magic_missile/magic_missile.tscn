@@ -17,4 +17,7 @@ shape = SubResource("CircleShape2D_5q6ki")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=122185599]
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2081021735]
+unique_name_in_owner = true
+
 [editable path="Hitbox2D"]

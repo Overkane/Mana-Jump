@@ -5,10 +5,12 @@ var _target: Node2D
 var _last_direction: Vector2
 
 @onready var _hitbox_2d: ComponentHitbox2D = %Hitbox2D
+@onready var _visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = %VisibleOnScreenNotifier2D
 
 
 func _ready() -> void:
 	_hitbox_2d.hit.connect(_on_hit)
+	_visible_on_screen_notifier_2d.screen_exited.connect(_on_screen_exited)
 
 	_hitbox_2d.damage = _damage
 
@@ -31,4 +33,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hit(hurtbox: ComponentHurtbox2D) -> void:
+	queue_free()
+
+func _on_screen_exited() -> void:
 	queue_free()

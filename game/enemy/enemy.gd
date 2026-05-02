@@ -1,13 +1,14 @@
 class_name Enemy
 extends Node2D
 
-@onready var _hurtbox_2d: ComponentHurtbox2D = %Hurtbox2D
-@onready var _health_component: ComponentHealth = %Health
-
 var _health: float
 var _damage: float
 var _speed: float
 var _xp: int
+
+@onready var _hurtbox_2d: ComponentHurtbox2D = %Hurtbox2D
+@onready var _health_component: ComponentHealth = %Health
+@onready var _visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = %VisibleOnScreenNotifier2D
 
 
 static func create(spawner: Node2D, spawn_position: Vector2, enemy_data: EnemyData) -> void:
@@ -20,6 +21,7 @@ static func create(spawner: Node2D, spawn_position: Vector2, enemy_data: EnemyDa
 func _ready() -> void:
 	_hurtbox_2d.got_hit.connect(_on_hit)
 	_health_component.health_depleted.connect(_on_health_depleted)
+	_visible_on_screen_notifier_2d.screen_exited.connect(_on_screen_exited)
 
 	add_to_group(Groups.ENEMIES)
 	_health_component.set_health(_health)
@@ -39,3 +41,6 @@ func _on_health_depleted() -> void:
 
 func _on_hit(hitbox: ComponentHitbox2D) -> void:
 	_health_component.take_damage(hitbox.damage)
+
+func _on_screen_exited() -> void:
+	queue_free()
